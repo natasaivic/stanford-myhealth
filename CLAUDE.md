@@ -8,26 +8,42 @@ This is a QA automation project using Pytest and Selenium to test key user-facin
 
 ## Development Commands
 
-Since this project uses Pytest and Selenium for testing (as described in README.md), the following commands will likely be relevant once implemented:
+### Environment Setup
+- `source venv/bin/activate` - Activate virtual environment
+- `deactivate` - Deactivate virtual environment
+- `pip install -r requirements.txt` - Install dependencies
+- `pip freeze > requirements.txt` - Update requirements file
 
+### Testing Commands
 - `pytest` - Run all tests
 - `pytest -v` - Run tests with verbose output
 - `pytest tests/test_login.py` - Run specific test file
 - `pytest -k "login"` - Run tests matching keyword
-- `pytest --html=report.html` - Generate HTML test report (if pytest-html is used)
+- `pytest --html=reports/report.html` - Generate HTML test report
+- `pytest --screenshot-on-failure` - Take screenshots on test failures
 
-For dependency management:
-- `pip install -r requirements.txt` - Install dependencies (once requirements.txt is created)
-- `pip freeze > requirements.txt` - Update requirements file
+## Project Structure
 
-## Project Structure (To Be Implemented)
+Current structure:
+- `venv/` - Virtual environment (excluded from git)
+- `requirements.txt` - Python dependencies
+- `.env` - Environment configuration (not committed to git)
+- `.gitignore` - Git exclusions
 
-Based on the project description, the typical structure would include:
-- Test files for different portal features (login, dashboard, appointments, lab results)
-- Page Object Model classes for web elements
-- Configuration files for test environments and browser settings
-- Utility functions for common test operations
-- Test data and fixtures
+To be implemented:
+- `tests/` - Test files for different portal features (login, dashboard, appointments, lab results)
+- `pages/` - Page Object Model classes for web elements
+- `utils/` - Utility functions for common test operations
+- `config/` - Configuration files for test environments and browser settings
+- `reports/` - Test reports and screenshots
+
+## Environment Configuration
+
+The `.env` file contains configuration for:
+- Test environment URLs (BASE_URL, STAGING_URL, DEV_URL)
+- Browser settings (BROWSER, HEADLESS, window dimensions)
+- Test credentials (placeholder values only)
+- Screenshot and reporting settings
 
 ## Testing Guidelines
 
